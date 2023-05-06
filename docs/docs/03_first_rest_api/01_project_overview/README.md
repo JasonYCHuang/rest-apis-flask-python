@@ -3,29 +3,21 @@ title: Project Overview
 description: A first look at the project we'll build in this section.
 ---
 
-# Overview of your first REST API
+# 概述 - 第一個 REST API
 
-import VideoEmbed from "@site/src/components/VideoEmbed";
+在這一節，將建置簡單 REST API 讓我們可以：
 
-<div style={{ maxWidth: "720px", margin: "3rem auto", boxShadow: "0 5px 15px 0 rgba(0, 0, 0, 0.15)" }}>
-<VideoEmbed url="https://customer-zmitazl0ztnd2pvm.cloudflarestream.com/cda9c0473bdc485a36905144f13f4d3f/iframe?poster=https%3A%2F%2Fcustomer-zmitazl0ztnd2pvm.cloudflarestream.com%2Fcda9c0473bdc485a36905144f13f4d3f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" />
-</div>
-
-In this section we'll make a simple REST API that allows us to:
-
-- Create stores, each with a `name` and a list of stocked `items`.
-- Create an item within a store, each with a `name` and a `price`.
-- Retrieve a list of all stores and their items.
-- Given its `name`, retrieve an individual store and all its items.
-- Given a store `name`, retrieve only a list of item within it.
-
-This is how the interaction will go!
+- 建立 stores, 每一個 store 有：一個 `name` 與 數個 `items`.
+- 建立 item 於 store 內, 每一個 item 有：一個 `name` 與 一個 `price`.
+- 取得 所有的 stores 與 它們的 items.
+- 給定 `name`, 取得 一個 store 與 它所有的 items.
+- 給定 store `name`, 取得 它所有的 items.
 
 :::tip Insomnia files
 Remember to get the Insomnia files for this section or for all sections [here](/insomnia-files/)!
 :::
 
-## Create stores
+## 建立 stores
 
 Request:
 
@@ -39,7 +31,7 @@ Response:
 {"name": "My Store", "items": []}
 ```
 
-## Create items
+## 建立 items
 
 Request:
 
@@ -53,7 +45,7 @@ Response:
 {"name": "Chair", "price": 175.50}
 ```
 
-## Retrieve all stores and their items
+## 取得 所有的 stores 與它們的 items
 
 Request:
 
@@ -79,7 +71,7 @@ Response:
 }
 ```
 
-## Get a particular store
+## 取得 一個 store
 
 Request:
 
@@ -101,7 +93,7 @@ Response:
 }
 ```
 
-## Get only items in a store
+## 取得 一個 store 內的所有 items
 
 Request:
 
