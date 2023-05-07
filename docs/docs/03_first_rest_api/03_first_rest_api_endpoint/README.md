@@ -1,27 +1,23 @@
 ---
-title: Your First REST API Endpoint
+title: 第一個 REST API 接口
 description: Learn how to define a REST API endpoint using Flask.
 ---
 
-# Your First REST API Endpoint
+# 第一個 REST API 接口
 
-import LockedVideoEmbed from "@site/src/components/LockedVideoEmbed";
+對於大部分專案，數據會儲存在 database ．現在，為了簡化，數據儲存在 Python list.
 
-<LockedVideoEmbed />
-
-Let's start off by defining where we'll store our data. In most REST APIs, you'd store your data in a database. For now, and for simplicity, we'll store it in a Python list.
-
-Later on we'll work on making this data dynamic. For now let's use some sample data.
+在後面的課程，數據會儲存在 database．
 
 ```py title="app.py"
 from flask import Flask
 
 app = Flask(__name__)
 
-stores = [{"name": "My Store", "items": [{"name": "my item", "price": 15.99}]}]
+stores = [{"name": "My Store", "items": [{"name": "my item", "price": 15.99}]}] # 數據儲存
 ```
 
-Now that we've got the data stored, we can go ahead and make a Flask route that, when accessed, will return all our data.
+建立第一個路由 (route)，它會回傳所有 stores 數據.
 
 ```py title="app.py"
 from flask import Flask
@@ -36,13 +32,13 @@ def get_stores():
     return {"stores": stores}
 ```
 
-## Anatomy of a Flask route
+## Flask 路由 route 架構
 
-There are two parts to a Flask route:
+Flask 路由 (route) 有兩部分:
 
-- The endpoint decorator
-- The function that should run
+- 裝飾子 decorator
+- 要執行的函式 function
 
-The endpoint decorator (`@app.get("/store")`) _registers_ the route's endpoint with Flask. That's the `/store` bit. That way, the Flask app knows that when it receives a request for `/store`, it should run the function.
+裝飾子 (`@app.get("/store")`) 將此 `/store` 接口 _註冊_ 到 Flask. 當 Flask 接收到 `/store`，它會執行此 函式 function `get_stores`.
 
-The function's job is to do everything that it should, and at the end return _something_. In most REST APIs, we return JSON, but you can return anything that can be represented as text (e.g. XML, HTML, YAML, plain text, or almost anything else).
+要執行的函式 function 最後有一回傳值，在此我們回傳 JSON，但也可回傳 (e.g. XML, HTML, YAML, plain text, 等等).

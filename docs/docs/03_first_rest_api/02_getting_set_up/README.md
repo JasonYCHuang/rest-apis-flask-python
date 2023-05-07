@@ -1,31 +1,24 @@
 ---
-title: Getting set up
+title: 開始設置
 description: Set up a Flask project and create the Flask app.
 ---
 
-# Getting set up
+# 開始設置
 
-import VideoEmbed from "@site/src/components/VideoEmbed";
+建立 conda 環境，並且啟用
 
-<div style={{ maxWidth: "720px", margin: "3rem auto", boxShadow: "0 5px 15px 0 rgba(0, 0, 0, 0.15)" }}>
-<VideoEmbed url="https://customer-zmitazl0ztnd2pvm.cloudflarestream.com/42b7de55034431b4c4c9420460f8df7d/iframe?poster=https%3A%2F%2Fcustomer-zmitazl0ztnd2pvm.cloudflarestream.com%2F42b7de55034431b4c4c9420460f8df7d%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" />
-</div>
-
-Create a virtual environment and activate it.
-   
 ```
-python3.10 -m venv .venv
-source .venv/bin/activate
+conda create --name tutorial-flask-01 python=3.9
+conda activate tutorial-flask-01
 ```
 
-Install Flask.
-   
+安裝 Flask.
+
 ```
 pip install flask
 ```
 
-Create a file for the Flask app (I like to call it `app.py`)
-Create the Flask app.
+建立一個檔案 `app.py` ，用於 Flask app
 
 ```py title="app.py"
 from flask import Flask
@@ -33,10 +26,10 @@ from flask import Flask
 app = Flask(__name__)
 ```
 
-Now you can run this app using the Flask Command-Line Interface (CLI):
+現在你可以執行 Flask 命令列 Command-Line Interface (CLI):
 
 ```
 flask run
 ```
 
-But the app doesn't do anything yet! Let's work on our first API endpoint next.
+但目前 Flask 還沒有辦法做任何事情.

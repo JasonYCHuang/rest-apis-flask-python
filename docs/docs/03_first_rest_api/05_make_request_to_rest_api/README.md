@@ -1,36 +1,21 @@
 ---
-title: How to interact with your REST API
+title: How to interact with REST API
 description: Use Postman and Insomnia REST Client to interact with your REST API.
 ---
 
-# How to make a request to a REST API
+# 向 REST API 發出請求
 
-One of the most important things about any software development is to make sure that our projects work!
+可以使用 Postman、Insomnia 發出請求
 
-So we need to be able to test our project, run it, and make sure it does what we think it does.
+Insomnia 是免費 且是 open source.
 
-There are two main ways of doing this:
+先下載 [downloading Insomnia REST Client](https://insomnia.rest/).
 
-- With automated tests.
-- With manual, exploratory testing.
-
-Usually you'd go with exploratory first, and then you'd make automated tests based on your manual tests.
-
-In this course we won't cover automated testing of your REST API (it's a long topic, and we've got another course on it).
-
-However, we will cover a lot of things you can do with manual testing.
-
-There are two tools I use for exploratory testing: Postman and Insomnia. It's up to you which one to use, but if you haven't used either one before, I recommend Insomnia.
-
-It's a bit easier to get started with, and it's free and open source.
-
-Start by [downloading Insomnia REST Client](https://insomnia.rest/).
-
-Once you've opened it, create a Project. I would call it "REST APIs with Flask and Python".
+建立一個專案 Project，取名為 "REST APIs with Flask and Python".
 
 ![Creating the Project for this course](assets/creating-project.png)
 
-Then, create a new Request Collection. Call it "Stores REST API".
+接著，建立一個請求集合，命名為 "Stores REST API".
 
 ![Creating the Stores REST API Request Collection](assets/making-request-collection.png)
 
