@@ -1,11 +1,15 @@
 ---
-title: Project Overview
+title: 專案概況
 description: A first look at the project we'll build in this section.
 ---
 
 # 概述 - 第一個 REST API
 
 在這一節，將建置簡單 REST API 讓我們可以：
+
+:::info
+一個商店(store)內，有數個品項(item)
+:::
 
 - 建立 stores, 每一個 store 有：一個 `name` 與 數個 `items`.
 - 建立 item 於 store 內, 每一個 item 有：一個 `name` 與 一個 `price`.

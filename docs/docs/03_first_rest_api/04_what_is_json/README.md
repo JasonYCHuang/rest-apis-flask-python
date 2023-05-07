@@ -1,71 +1,55 @@
 ---
-title: "What is JSON?"
+title: '什麼是 JSON?'
 description: JSON is the way we normally transfer data to and from REST APIs.
 ---
 
-# What is JSON?
+# 什麼是 JSON?
 
-JSON is just a (usually long) string whose contents follow a specific format.
-
-One example of JSON:
+JSON 只是一個長字串，包含以下格式.
 
 ```json
 {
-    "key": "value",
-    "another": 25,
-    "listic_data": [
-        1,
-        3,
-        7
-    ],
-    "sub_objects": {
-        "name": "Rolf",
-        "age": 25
-    }
+  "key": "value",
+  "another": 25,
+  "listic_data": [1, 3, 7],
+  "sub_objects": {
+    "name": "Rolf",
+    "age": 25
+  }
 }
 ```
 
-So at its core, you've got:
+他的值可以為：
 
 - Strings
 - Numbers
 - Booleans (`true` or `false`)
 - Lists
-- Objects (akin to dictionaries in Python)
-  - Note that objects are not ordered, so the keys could come back in any order. This is not a problem!
+- Objects (akin to dictionaries 字典 in Python)
+  - 鍵 (key) 無順序
 
-At the top level of a piece of JSON you can have an object or a list. So this is also valid JSON:
+在最上層，JSON 可為 object 或 list．以下為一個有效的 JSON:
 
 ```json
 [
-    {
-        "name": "Rolf",
-        "age": 25
-    },
-    {
-        "name": "Anne",
-        "age": 27
-    },
-    {
-        "name": "Adam",
-        "age": 23
-    }
+  {
+    "name": "Rolf",
+    "age": 25
+  },
+  {
+    "name": "Anne",
+    "age": 27
+  },
+  {
+    "name": "Adam",
+    "age": 23
+  }
 ]
 ```
 
-When we return a Python dictionary in a Flask route, Flask automatically turns it into JSON for us, so we don't have to.
+當回傳 Python dictionary 字典, Flask 會自動將它轉為 JSON，所以我們不需再轉一次.
 
-Remember that "turning it into JSON" means two things:
+有兩個轉換要特別注意:
 
-1. Change Python keywords and values so they match the JSON standard (e.g. `True` to `true`).
-2. Turn the whole thing into a single string that our API can return.
-
-:::tip
-Note that JSON can be "prettified" (as the above examples), although usually it is returned by our API "not-prettified":
-
-```json
-[{"name":"Rolf","age":25},{"name":"Anne","age":27},{"name":"Adam","age":23}]
-```
-
-This removal of newlines and spaces, believe it or not, adds up and can save a lot of bandwidth since there is less data to transfer between the API server and the client.
-:::
+1. 把 Python 關鍵字轉為 JSON 標準 (也就是轉 `True` 為 `true`).
+2. 把整個 dictionary 轉為長字串.

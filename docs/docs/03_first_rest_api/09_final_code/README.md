@@ -1,11 +1,9 @@
 ---
-title: Final code of this section
+title: 此章節的所有代碼
 description: Overview of the project we've built and all the code in it.
 ---
 
-# Final code of this section
-
-Here's everything we've written in this section!
+# 此章節的所有代碼
 
 ```py title="app.py"
 from flask import Flask, request

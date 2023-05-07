@@ -1,23 +1,23 @@
 ---
-title: How to create stores
+title: 如何建立 stores
 description: Learn how to add data to our REST API.
 ---
 
-# How to create stores in our REST API
+# 如何建立 stores
 
-To create a store, we'll receive JSON from our client (in our case, Insomnia, but it could be another Python app, JavaScript, or any other language or tool).
+由 client 發送 JSON 請求 (request) (可用 Insomnia、curl 或另一個 python app)
 
-Our client will send us the name of the store they want to create, and we will add it to the database!
+請求包含 store 的 name，我們需要把他加入 database
 
-For this, we will use a `POST` method. `POST` is usually used to receive data from clients and either use it, or create resources with it.
+這裡使用 `POST` 請求. `POST` 同常用於創建資料.
 
-In order to access the JSON body of a request, we will need to import `request` from `flask`. Your import list should now look like this:
+為了可以得到請求的 JSON 內容, 需要由 `flask` 引入 `request`.
 
 ```py
 from flask import Flask, request
 ```
 
-Then, create your endpoint:
+接著，建立接口
 
 ```py title="app.py"
 # highlight-start
@@ -44,18 +44,20 @@ def create_store():
 # highlight-end
 ```
 
-Here we use `request.get_json()` to retrieve the JSON content of our request.
+使用 `request.get_json()` 得到請求 (request) 的 JSON 內容.
 
-Then we create a new dictionary that represents our store. It has a `name` and `items` (which is an empty list).
+建立 `new_store` object/dictionary 代表 store. 它含有 `name` 與 `items` (空的 list).
 
-Then we append this store to our `stores` list.
+接著把 `new_store` append 到原有的 `stores` list.
 
-Finally we return the newly created `store`. It's empty, but it serves as a **success message**, to tell our client that we have successfully created what they wanted us to create.
+最後，返回新建的 `new_store`，以告訴 client 端我們已成功建立一筆新的 store.
 
-:::tip Returning a status code
-Every response has a status code, which tells the client if the server was successful or not. You already know at least one status code: 404. This means "Not found".
+:::tip 回傳狀態代碼 (status code)
+每個回傳都有 status code ， 告訴 client 端我們的 request 是否成功的被 server 處理．其中 `404` 是 Not Found (接口未被找到)
 
-The most common status code is `200`, which means "OK". That's what Flask returns by default, such as in the `get_stores()` function.
+最常用的 status code 是 `200`，表示 "OK".
 
-If we want to return a different status code using Flask, we can put it as the second value returned by an endpoint function. In `create_store()`, we are returning the code `201`, which means "Created".
+若我們要回傳不同的 status code ，可以把它放在接口 function 的第二個值.
+
+在 `create_store()` 中，我們回傳 `201`，表示 "已建立".
 :::
